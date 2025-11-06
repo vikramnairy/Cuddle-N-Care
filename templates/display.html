@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploaded Pets</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffcc80; /* Light orange background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            margin: 0;
+            border-bottom: 2px solid #f1c1c1;
+        }
+        ul {
+            list-style-type: none;
+            padding: 20px;
+            margin: 0;
+        }
+        li {
+            background-color: #fff3e0; /* Very light orange background */
+            border: 1px solid #ffcc80;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            margin: 10px 0;
+            color: #555;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.display = "flex"; // Show the overlay
+
+            setTimeout(function() {
+                overlay.style.display = "none"; // Hide the overlay after 3 seconds
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <h1>Uploaded Pets</h1>
+    <ul>
+        {% for pet in pets %}
+        <li>
+            <p>Name: {{ pet.name }}</p>
+            <p>Phone Number: {{ pet.phone_number }}</p>
+            <p>Location: {{ pet.location }}</p>
+            <p>Village: {{ pet.village }}</p>
+            <p>Address: {{ pet.address }}</p>
+            <!-- Replace with the correct URL dynamically -->
+            <img src="{{ pet.file_url }}" style="width: 200px; height: auto;">
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

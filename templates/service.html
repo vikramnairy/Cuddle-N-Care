@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services Continued</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='service.css')}}">
+    <title>Cuddle Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Basic -->
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.css')}}">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <style>
+  .sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+  .custom-alert {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.custom-alert img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.custom-alert button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-alert button:hover {
+  background-color: black;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+  
+  </style>
+</head>
+<body>
+    <section class="first-section">
+        <div id="home"class="navigation-bar">
+            <div class="logo">
+                <h1><span>Cuddle</span>Care</h1>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="service">Home</a></li>
+                    <li><a href="">Menu</a></li>
+                    <li><a href="#row">service</a></li>
+                    <li><a href="#cnt">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="signup-login-btn">
+              <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">account Information</a>
+                <a href="#"></a>
+                <a href="#">Clients</a>
+                <a href="#">Log Out</a>
+              </div>
+              
+              <div id="main">
+                <button class="openbtn" onclick="openNav()">&#9776;</button>
+              </div>
+            </div>
+        </div>
+        <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+        }
+      </script>
+
+        <div class="heading-content">
+            <br>
+            <h1>ALL CUDDLE CARE SERVICES!</h1>
+            <div class="small-horizontal-line"></div>
+            <p>
+
+                Cuddle care is a broad term that encompasses a variety of services and products that help to keep pets healthy and happy. This can include everything from providing food and shelter to grooming and veterinary care. Pet care can be a challenging but rewarding experience, and it can be a great way to bond with your furry friend.
+            </p>
+            <br><br>
+            <a href="#row" class="learn-btn">Our Services ↓ </a>
+        </div>
+    </section>
+    <br><br>
+
+    <section class="service_section layout_padding" id="row">
+        <div data-aos="fade-up" data-aos-duration="2000" class="aos-init aos-animate"></div>
+        <div class="container-fluid">
+          <div class="row" id="row">
+            <div class="col-md-6 offset-md-2">
+              <h2 class="custom_heading">
+                Our <span>Services</span>
+              </h2>
+              <br>
+              <div class="container layout_padding2">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="img_box">
+                      <img src="{{ url_for('static',filename='s-1.png')}}" alt="Capture">
+                    </div>
+                    <div class="detail_box">
+                       <h6><a href="https://youtu.be/9rDyitAA0rg?si=h3HM9V05Y9qxG51c">Training</a></h6>
+                      <p>
+                        Attentive care and companionship for your beloved pets, ensuring their well-being and happiness.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="img_box">
+                      <img src="{{ url_for('static',filename='s-2.png')}}" alt="Capture">
+                    </div>
+                    <div class="detail_box">
+                      <h6><a href="#donate">Donation</a></h6>
+                      
+                      <p>
+                        Supporting animal welfare through pet donation, providing resources and assistance to those in need.
+                      </p>
+
+                    <br><br>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="img_box">
+                      <img src="{{ url_for('static',filename='s-3.png')}}" alt="Capture">
+                    </div>
+                    <div class="detail_box">
+                      <h6><a href="helpline">Emergency</a></h6>
+                      <p>
+                        Rapid response to pet emergencies, providing immediate care and support in critical situations for your beloved companions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="doctercheck">
+              <img src="{{ url_for('static',filename='tool.png')}}" alt="" class="w-100">
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br><br>
+      <section>
+      <div class="donate" id="donate">
+        <div class="offer-heading">
+            <h1><span class="offer-heading-span-h1"></span> They need you now:</h1>
+            <div class="offers-info">
+                <div class="left">
+                    <h2 class="for-bottom-dash"></h2>
+                    <h2 class="choice"></h2>
+                    <div class="soup">
+                        <span>Auto Feeder</span>
+                        <p>Donation</p>
+                        <p> It helps to the pet in roads</p>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                        <button onclick="myFunction()" class="under-offers-btn1">DONATE</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+<div class="custom-alert" id="customAlert">
+  <img src="{{ url_for('static',filename='qr.jpeg')}}" alt="Capture">
+  <p>Scan and donate</p>
+  <button onclick="closeAlert()">OK</button>
+</div>
+
+<br><br>
+
+<script>
+function myFunction() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("customAlert").style.display = "block";
+}
+
+function closeAlert() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("customAlert").style.display = "none";
+}
+</script>
+</section>
+  
+<section class="care-locator">
+  <h1>Veterinary <span class="highlight">Doctor</span></h1>
+  <br><br>
+
+  <div class="containern">
+      <br><br>
+      <h1>Veterinary Doctor Finder</h1>
+      <label for="location-select">Location</label>
+      <select id="location-select" name="location" aria-placeholder="Add a geotag">
+          <option value="" disabled selected>Select a location</option>
+          <option value="kundapura">Kundapura</option>
+          <option value="baindoor">Baindoor</option>
+          <option value="kapu">Kapu</option>
+          <option value="bramhavara">Bramhavara</option>
+          <option value="karkala">Karkala</option>
+          <option value="hebri">Hebri</option>
+          <option value="udupi">Udupi</option>
+      </select>
+      <br><br><br><br>
+      <button id="submit-button">Submit</button>
+  </div>
+
+  <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="modal-message"></p>
+      </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('submit-button').addEventListener('click', function() {
+  var location = document.getElementById('location-select').value;
+  var message;
+
+  if (!location) {
+      message = 'Please select a location.';
+  } else {
+      switch(location) {
+          case 'kundapura':
+              message = 'Veterinary Doctor near Kundapura:<br> Dr. A.B. Smith<br> Phone: 123-456-7890<br> Address: 123 Pet St, Kundapura<br> Landmark: Near Central Park';
+              break;
+          case 'baindoor':
+              message = 'Veterinary Doctor near Baindoor:<br> Dr. C.D. Brown<br> Phone: 234-567-8901<br> Address: 456 Animal Ave, Baindoor<br> Landmark: Opposite Baindoor Hospital';
+              break;
+          case 'kapu':
+              message = 'Veterinary Doctor near Kapu:<br> Dr. E.F. Johnson<br> Phone: 345-678-9012<br> Address: 789 Pet Blvd, Kapu<br> Landmark: Next to Kapu Tower';
+              break;
+          case 'bramhavara':
+              message = 'Veterinary Doctor near Bramhavara:<br> Dr. G.H. Williams<br> Phone: 456-789-0123<br> Address: 101 Pet Lane, Bramhavara<br> Landmark: Behind Bramhavara Plaza';
+              break;
+          case 'karkala':
+              message = 'Veterinary Doctor near Karkala:<br> Dr. I.J. Davis<br> Phone: 567-890-1234<br> Address: 202 Pet Rd, Karkala<br> Landmark: Adjacent to Karkala Market';
+              break;
+          case 'hebri':
+              message = 'Veterinary Doctor near Hebri:<br> Dr. K.L. Garcia<br> Phone: 678-901-2345<br> Address: 303 Pet Way, Hebri<br> Landmark: Near Hebri Bus Stand';
+              break;
+          case 'udupi':
+              message = 'Veterinary Doctor near Udupi:<br> Dr. M.N. Martinez<br> Phone: 789-012-3456<br> Address: 404 Pet Dr, Udupi<br> Landmark: Opposite Udupi Mall';
+              break;
+          default:
+              message = 'Please select a location.';
+              break;
+      }
+  }
+
+  var modal = document.getElementById('myModal');
+  var modalMessage = document.getElementById('modal-message');
+  modalMessage.innerHTML = message; // Use innerHTML to support HTML content
+  modal.style.display = 'block';
+
+  var span = document.getElementsByClassName('close')[0];
+  span.onclick = function() {
+      modal.style.display = 'none';
+  };
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = 'none';
+      }
+  };
+});
+</script>
+</div>
+<div class="menu-images-container">
+  <div class="wrapper">
+    <i class="fa fa-chevron-circle-left" aria-hidden="true" id="prev-btn"></i>
+    <div class="carousel">
+      <img src="{{ url_for('static', filename='istockphoto-1435341803-170667a.webp')}}" alt="pet image">
+      <img src="{{ url_for('static', filename='premium_photo-1663047910718-c8758a6785e9.avif')}}" alt="pet image">
+      <img src="{{ url_for('static', filename='premium_photo-1664301634899-94f507e7f8c6.avif')}}" alt="pet image">
+      <img src="{{ url_for('static', filename='istockphoto-944687438-170667a.webp')}}" alt="medicine image">
+      <img src="{{ url_for('static', filename='istockphoto-1369649907-170667a.webp')}}" alt="medicine image">
+    </div>
+    <i class="fa fa-chevron-circle-right" aria-hidden="true" id="next-btn"></i>
+  </div>
+</div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.carousel');
+  const nextButton = document.getElementById('next-btn');
+  const prevButton = document.getElementById('prev-btn');
+  const images = document.querySelectorAll('.carousel img');
+  let currentIndex = 0;
+  let scrollInterval;
+
+  const showImage = (index) => {
+    images.forEach((img, i) => {
+      if (i === index) {
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
+    });
+  };
+
+  const handleButton = (direction) => {
+    currentIndex = direction === 'next' ? (currentIndex + 1) % images.length : (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  };
+
+  nextButton.addEventListener('click', () => handleButton('next'));
+  prevButton.addEventListener('click', () => handleButton('prev'));
+
+  carousel.addEventListener('mouseenter', () => {
+    clearInterval(scrollInterval);
+    scrollInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }, 2000); // Adjust scroll interval as needed
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    clearInterval(scrollInterval);
+  });
+
+  showImage(currentIndex); // Show the first image initially
+});
+  </script>
+</div>
+
+    <br><br>
+      <div class="footer-image-container">
+        <i class="fa fa-instagram" aria-hidden="true"> </i>
+        <a href="https://instagram.com/vikram_nairy_66_?igshid=YTQwZjQ0NmI0OA=="
+            target="_blank"><span>Follow Me On Insatagram @cuddlecare  </span></a>
+    </div>
+
+    <div class="lot-of-images-container">
+        <div class="images-footers">
+            <img src="{{ url_for('static',filename='cat_sleeping_with_toy_large.webp')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='bird-infectious-diseases-care-sheet-hero.avif')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='images (1).jpeg')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='images (2).jpeg')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='images (3).jpeg')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='images.jpeg')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='download.jpeg')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='download (1).jpeg')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='download (2).jpeg')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='download (3).jpeg')}}" alt="pet image">
+            <img src="{{ url_for('static',filename='download (4).jpeg')}}" alt="pet image">
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="left-footer">
+            <div id="cnt" class="about-us">
+                <div data-aos="fade-up" data-aos-duration="2000" class="aos-init aos-animate">
+            <p class="icon-1">
+                <i class="fa fa-phone" aria-hidden="true"><span class="phone">9353801548
+                        (080-036610)</span></i>
+            </p>
+            <p class="icon-1">
+                <i class="fa fa-map-marker" aria-hidden="true"><span class="address">Sangam - Kundapura, KA
+                        576201</span></i>
+            </p>
+            <p class="icons-container">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            </p>
+                </div>
+            </div>
+            <div class="footer-horizontal-line">
+                <hr>
+            </div>
+
+            <div class="main-footer-nav-list">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Terms and Condition</a></li>
+
+                </ul>
+            </div>
+            <span class="copyright-footer">2023Copyright. All Rights Reserved</span>
+        </div>
+
+        <div class="right-footer">
+          <div class="right-footer">
+            <p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3883.1635093198226!2d74.6969113143478!3d13.629213790442477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbbdb45a6d16ab%3A0x1c76ed4e77d3e8c9!2sKundapura%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1621071746564!5m2!1sen!2sin"
+                    width="669" height="290" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </p>
+        </div>
+        
+</div>
+
+      
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>AOS.init()</script>  
+</body>
+</html>
