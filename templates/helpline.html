@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='helpline.css')}}">
+    <title>Cuddle Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body>
+    <section class="first-section">
+        <div id="home"class="navigation-bar">
+            <div class="logo">
+                <h1><span>Cuddle</span>Care</h1>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="">Menu</a></li>
+                    <li><a href="{{url_for('service')}}">service</a></li>
+                    <li><a href="#cnt">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="signup-login-btn">
+                <div id="mySidebar" class="sidebar">
+                </div>
+                
+                <div id="main">
+                  <button class="openbtn" onclick="openNav()">&#9776;</button>
+                </div>
+              </div>
+          </div>
+          <script>
+          function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+          }
+          
+          /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+          function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+          }
+        </script>
+        </div>
+
+        <div class="heading-content">
+            <h1>LIFE WITH A PURPOSE!</h1>
+            <div class="small-horizontal-line"></div>
+            <p>
+                Cuddle care is a broad term that encompasses a variety of services and products that help to keep pets healthy and happy. This can include everything from providing food and shelter to grooming and veterinary care. Pet care can be a challenging but rewarding experience, and it can be a great way to bond with your furry friend.
+            </p>
+            <br> <br> <br> <br>
+            <a href="#joinu" class="learn-btn">Pet Helpline ↓ </a>
+        </div>
+    </section>
+    <section class="helplinesection">
+        <section id="sectionToScrollTo"></section>
+        <form method="post" action="">
+        <div id="joinu" class="join-us-container">
+        <h1>Pet Helpline</h1>
+        <div class="horizontal-line">
+            <hr>
+        </div>
+        <p>Fill this form</p>
+        <div class="feilds-container">
+            <div class="all-inputs-fields-for-join-us">
+                <div class="input-fields">
+                    <label class="helplabel"> Name</label>
+                    <br>
+                    <input type="text" id="myin" class="myin" placeholder="Enter your name" required>
+                </div>
+                <br>
+                <div class="input-fields">
+                    <label class="helplabel">Phone Number</label>
+                    <br>
+                    <input type="tel" id="myin" class="myin" placeholder="Enter your phone Number" required>
+                </div>
+                <div>
+                    <br>
+                    <div class="input-fields">
+                <label for="location-select" class="helplabel">Choose a Taluk:</label>
+                <br>
+                <!-- new code-->
+                <div class="input-fields">
+                <select id="location-select" name="location" onchange="filterVillages(this)">
+                    <option value="" disabled selected>Select a location</option>
+                    <option value="kundapura">Kundapura</option>
+                    <option value="baindoor">Baindoor</option>
+                    <option value="kapu">Kapu</option>
+                    <option value="bramhavara">Bramhavara</option>
+                    <option value="udupi">karkala</option>
+                    <option value="udupi">Hebri</option>
+                    <option value="udupi">Udupi</option>
+                </select>
+            </div>
+                
+                <select id="village-select" class="village-select" name="village" style="display: none;">
+                    <option value="" disabled selected>Select a village</option>
+                </select>
+                
+                <script>
+                    function filterVillages(selectElement) {
+                        var selectedValue = selectElement.value;
+                        var udupiVillages = {
+                            "udupi": ["Shiroor", "Kudi", "Alevoor (ct)", "Ambalpadi", "Ambalpady (og)", "Anjaru", "Athradi", "Badagabettu(76)", "Badagabettu (no.80) (ct)", "Badanidiyur", "Bairampalli", "Bellampalli", "Bellarpadi", "Bommarabettu", "Herga", "Hirebettu", "Kadekar", "Kadekar (og)", "Kelarkalabettu", "Kelarkalabettu (og)", "Kidiyoor", "Kidiyoor (og)", "Kodavuru", "Korangrapady (ct)", "Kukkehalli", "Kuthpadi", "Kuthpady (og)", "Manipura (ct)", "Marne", "Moodanidambur (og)", "Mooduthonse", "Mudanidambur", "Paduthonse", "Perdoor", "Pernankila", "Putturu", "Shivalli", "Tenkanidyoor (ct)", "Udyavara (ct)", "Yenagudde"],
+                            "baindoor": ["Badakere", "Bijoor", "Byndoor", "Golihole", "Hadavu", "Hallihole", "Heranjal", "Heroor", "Jadkal", "Kalthodu", "Kambadakone", "Kergal", "Kirimanjeshwar", "Kollur", "Maravanthe", "Mudoor", "Nada", "Nandanavana", "Navunda", "Paduvari", "Shiroor", "Thagarasi", "Ulloor", "Uppunda", "Yedthare", "Yeljith", "Kamalashile", "Senapur"],
+                            "kundapura": ["Ajri", "Aloor", "Amasebailu", "Ampar", "Anagalli", "Asodu", "Balkur", "Basrur", "Beejadi", "Bellal", "Beloor", "Chittoor", "Devalkunda", "Gangolli", "Gopadi", "Gujjadi", "Gulvadi", "Hakladi", "Halady (76)", "Hallady-harkadi", "Halnad", "Hangaloor", "Harady (28)", "Hardally-mandally", "Harkoor", "Hattiangadi", "Hemmadi", "Hengavalli", "Heskathoor", "Hombady-mandadi", "Hosadu", "Hosangadi", "Hosoor", "Idurkunhadi", "Japthi", "Kalavara", "Kandavara", "Kanyana", "Karkunje", "Kattabelthoor", "Kavrady", "Kedoor", "Kenchanoor", "Keradi", "Kodladi", "Koni", "Korgi", "Koteshwar (ct)", "Kulanje", "Kumbashi"],
+                            "kapu": ["Kalthur", "Heroor", "Bada (ct)", "Belle", "Belpu", "Hejamadi", "Innanje", "Kattingere", "Kote", "Kurkalu", "Kuthyar", "Majoor", "Mallar (ct)", "Mattu", "Moodabettu (ct)"],
+                            "karkala": ["Bailoor", "Belman", "Bola", "Durga", "Eedu", "Hermunde", "Hirgana", "Inna", "Irvathuru", "Jarkala", "Kadthala", "Kallya", "Kanajaru", "Kanthavara", "Karkal", "Kedinje", "Kervashe", "Kowdoor", "Kukkuje", "Kukkundoor", "Mala", "Marne", "Miyar", "Mudar", "Mulladka", "Mundkuru", "Nallur", "Nandalike", "Neere", "Ninjoor", "Nitte", "Nooralbettu", "Palli", "Renjala", "Sanoor (ct)", "Shirlal", "Sooda", "Tellar", "Yellare", "Yerlapady"],
+                            "bramhavara": ["Kalthur", "Shiroor", "Heroor (ct)", "Achalady", "Aroor", "Avarse", "Baikady", "Balkudru", "Bannady", "Billadi", "Chanthar", "Cherkady", "Chitrapadi", "Giliyar", "Gundmi", "Haluvalli", "Handady", "Hanehalli", "Haradi", "Havanje", "Heggunje", "Herady", "Hiliyana", "Hosala", "Hosoor", "Irody", "Kachur", "Kadur", "Kakkunje", "Karkada", "Kavadi", "Kenjoor", "Kodi", "Kotathattu", "Kudi (82)", "Kumragod", "Manoor", "Matpady", "Moodahadu", "Nadur", "Nalkur", "Nanchar", "Neelavar", "Pandeshwara", "Parampalli", "Pejamangoor", "Shiriyara", "Uppoor", "Vaddarse", "Vandar", "Varamballi (ct)", "Yedthady"],
+                            "hebri": ["Albadi", "Andaru", "Belenje", "Belve", "Chara", "Hebri", "Kabbinale", "Kerebettu", "Kuchchur", "Madammakki", "Mudrady", "Nadpalu", "Padukudoor", "Shedimane", "Shivapura", "Varanga"],
+                            // Add more taluks and their villages as needed
+                        };
+                        
+                        var villageSelect = document.getElementById("village-select");
+                        villageSelect.innerHTML = "<option value='' disabled selected>Select a village</option>"; // Clear existing options
+                        
+                        if (selectedValue === "udupi") {
+                            villageSelect.style.display = "block"; // Show the village select
+                            udupiVillages["udupi"].forEach(function(village) {
+                                var option = document.createElement("option");
+                                option.text = village;
+                                option.value = village;
+                                villageSelect.add(option);
+                            });
+                        } else if (selectedValue === "kundapura") {
+                            villageSelect.style.display = "block"; // Show the village select
+                            udupiVillages["kundapura"].forEach(function(village) {
+                                var option = document.createElement("option");
+                                option.text = village;
+                                option.value = village;
+                                villageSelect.add(option);
+                            });
+                        } else if (selectedValue === "hebri") {
+                            villageSelect.style.display = "block"; // Show the village select
+                            udupiVillages["hebri"].forEach(function(village) {
+                                var option = document.createElement("option");
+                                option.text = village;
+                                option.value = village;
+                                villageSelect.add(option);
+                            });
+                        } else if (selectedValue === "baindoor") {
+                            villageSelect.style.display = "block"; // Show the village select
+                            udupiVillages["baindoor"].forEach(function(village) {
+                                var option = document.createElement("option");
+                                option.text = village;
+                                option.value = village;
+                                villageSelect.add(option);
+                            });
+                        } else if (selectedValue === "karkala") {
+                            villageSelect.style.display = "block"; // Show the village select
+                            udupiVillages["karkala"].forEach(function(village) {
+                                var option = document.createElement("option");
+                                option.text = village;
+                                option.value = village;
+                                villageSelect.add(option);
+                            });
+                        } else if (selectedValue === "kapu") {
+                            villageSelect.style.display = "block"; // Show the village select
+                            udupiVillages["kapu"].forEach(function(village) {
+                                var option = document.createElement("option");
+                                option.text = village;
+                                option.value = village;
+                                villageSelect.add(option);
+                            });
+                        } else if (selectedValue === "bramhavara") {
+                            villageSelect.style.display = "block"; // Show the village select
+                            udupiVillages["bramhavara"].forEach(function(village) {
+                                var option = document.createElement("option");
+                                option.text = village;
+                                option.value = village;
+                                villageSelect.add(option);
+                            });
+                        } else {
+                            villageSelect.style.display = "none"; // Hide the village select if no location is selected
+                        }
+                    }
+                </script>
+                <div class="input-fields">
+                    <label class="helplabel">Pet Image</label>
+                    <br>
+                    <input type="file"  id="myin" class="myin" placeholder="file" required>
+                </div>
+
+                <br><br>
+                <div class="input-fields">
+                    <input type="checkbox" placeholder="" required><small>All above information is true</small>
+                </div>
+
+            </div>
+            <br>
+            <div class="button-create-account">
+                <a href="{{url_for('register')}}"></a><button >Submit></button>
+            </div>
+        </div>
+       </div>
+    </div>
+    </div>
+    </form>
+</section>
+ <div class="footer-image-container">
+     <i class="fa fa-instagram" aria-hidden="true"> </i>
+     <a href="https://instagram.com/vikram_nairy_66_?igshid=YTQwZjQ0NmI0OA=="
+         target="_blank"><span>Follow Me On Insatagram @cuddlecare  </span></a>
+ </div>
+
+ <div class="lot-of-images-container">
+     <div class="images-footers">
+         <img src="{{ url_for('static',filename='cat_sleeping_with_toy_large.webp')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='bird-infectious-diseases-care-sheet-hero.avif')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='images (1).jpeg')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='images (2).jpeg')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='images (3).jpeg')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='images.jpeg')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='download.jpeg')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='download (1).jpeg')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='download (2).jpeg')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='download (3).jpeg')}}" alt="pet image">
+         <img src="{{ url_for('static',filename='download (4).jpeg')}}" alt="pet image">
+     </div>
+ </div>
+ <footer class="main-footer">
+    <div class="left-footer">
+        <div id="cnt" class="about-us">
+            <div data-aos="fade-up" data-aos-duration="2000" class="aos-init aos-animate">
+        <p class="icon-1">
+            <i class="fa fa-phone" aria-hidden="true"><span class="phone">9353801548
+                    (080-036610)</span></i>
+        </p>
+        <p class="icon-1">
+            <i class="fa fa-map-marker" aria-hidden="true"><span class="address">Sangam - Kundapura, KA
+                    576201</span></i>
+        </p>
+        <p class="icons-container">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+        </p>
+            </div>
+        </div>
+        <div class="footer-horizontal-line">
+            <hr>
+        </div>
+
+        <div class="main-footer-nav-list">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Terms and Condition</a></li>
+
+            </ul>
+        </div>
+        <span class="copyright-footer">2023Copyright. All Rights Reserved</span>
+    </div>
+
+    <div class="right-footer">
+      <div class="right-footer">
+        <p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3883.1635093198226!2d74.6969113143478!3d13.629213790442477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbbdb45a6d16ab%3A0x1c76ed4e77d3e8c9!2sKundapura%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1621071746564!5m2!1sen!2sin"
+                width="669" height="290" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </p>
+    </div>
+    
+</div>
+
+  
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init()</script>  
+
+ <script src="{{url_for('static',filename='index.js')}} defer></script>
+<!-- Include AOS JavaScript -->
+
+
+</body>
+
+</html>

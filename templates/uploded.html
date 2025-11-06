@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploaded Files</title>
+    <style>
+        body {
+            
+            font-family: 'Arial', sans-serif;
+            background-color: #ffcc80; /* Light orange background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            margin: 0;
+            border-bottom: 2px solid #f1c1c1;
+        }
+        ul {
+            list-style-type: none;
+            padding: 20px;
+            margin: 0;
+        }
+        li {
+            background-color: #fff3e0; /* Very light orange background */
+            border: 1px solid #ffcc80;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            margin: 10px 0;
+            color: #555;
+        }
+        p strong {
+            color: #333;
+        }
+        a {
+            color: #e64a19;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .home-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #e64a19;
+        }
+        /* Modal style */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px); /* Blurred background */
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #2ab600;
+            padding: 20px;
+            color:white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%; /* Adjust the y-axis as needed */
+        left: 50%; /* Adjust the x-axis as needed */
+        transform: translate(-50%, 10%);
+    }
+        
+    h1 {
+        font-size: 24px;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-size: 16px;
+        color: #666666;
+        margin-bottom: 8px;
+    }
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    button {
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+        background-color: orange;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        border-radius: 8px;
+    }
+    .close {
+        color: black;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.display = "flex"; // Show the overlay
+
+            setTimeout(function() {
+                overlay.style.display = "none"; // Hide the overlay after 3 seconds
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <div id="overlay" class="overlay">
+        <div class="modal-content">
+            <h2>Successfully Added</h2>
+        </div>
+    </div>
+    <h1>Uploaded Files</h1>
+    <ul>
+        {% for pet in pets %}
+        <li>
+            <p><strong>Name:</strong> {{ pet.name }}</p>
+            <p><strong>Phone Number:</strong> {{ pet.phone_number }}</p>
+            <p><strong>Address:</strong> {{ pet.address }}</p>
+            <p><strong>File URL:</strong> <a href="{{ pet.file_url }}" target="_blank">{{ pet.file_url }}</a></p>
+            <p><strong>Image:</strong></p>
+            <img src="{{ pet.file_url }}" alt="{{ pet.name }}">
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="container">
+        <h1>Pet Care Center Locator</h1>
+        <label for="location-select">Location</label>
+        <select id="location-select" name="location" aria-placeholder="add a geotag tag photo only">
+            <option value="" disabled selected>Select a location</option>
+            <option value="kundapura">Kundapura</option>
+            <option value="baindoor">Baindoor</option>
+            <option value="kapu">Kapu</option>
+            <option value="bramhavara">Bramhavara</option>
+            <option value="karkala">Karkala</option>
+            <option value="hebri">Hebri</option>
+            <option value="udupi">Udupi</option>
+        </select>
+        <button id="submit-button">Submit</button>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function() {
+            var location = document.getElementById('location-select').value;
+            var message = '';
+
+            switch(location) {
+                case 'kundapura':
+                    message = 'Pet care center near Kundapura: ABC Pet Care, Address: 123 Pet St, Kundapura';
+                    break;
+                case 'baindoor':
+                    message = 'Snugglesitter Baindoor: Snugglesitter Pet Care, Address: near baindoor hospital , Baindoor';
+                    break;
+                case 'kapu':
+                    message = 'Pet care center near Kapu: Pet Haven, Address: 789 Pet Blvd, Kapu';
+                    break;
+                case 'bramhavara':
+                    message = 'Pet care center near Bramhavara: Pet Oasis, Address: 101 Pet Lane, Bramhavara';
+                    break;
+                case 'karkala':
+                    message = 'Pet care center near Karkala: Happy Pets, Address: 202 Pet Rd, Karkala';
+                    break;
+                case 'hebri':
+                    message = 'Pet care center near Hebri: Pet Paradise, Address: 303 Pet Way, Hebri';
+                    break;
+                case 'udupi':
+                    message = 'Pet care center near Udupi: Pet Care Center, Address: 404 Pet Dr, Udupi';
+                    break;
+                default:
+                    message = 'Please select a location.';
+                    break;
+            }
+
+            var modal = document.getElementById('myModal');
+            var modalMessage = document.getElementById('modal-message');
+            var span = document.getElementsByClassName('close')[0];
+
+            modalMessage.textContent = message;
+            modal.style.display = 'block';
+
+            span.onclick = function() {
+                modal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
